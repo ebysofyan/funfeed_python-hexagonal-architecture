@@ -1,4 +1,7 @@
 .venv/
 .venv/*
+migrations/
+migrations/*
 
+.env
 poetry.lock

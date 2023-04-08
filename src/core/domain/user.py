@@ -1,12 +1,13 @@
-from sqlalchemy import String, BigInteger
+from sqlalchemy import BigInteger, String
+from sqlalchemy.orm import Mapped, mapped_column
+
 from .base import Base
-from sqlalchemy.orm import mapped_column, MappedColumn
 
 
 class User(Base):
     __tablename__ = "user__users"
 
-    id: MappedColumn = mapped_column(BigInteger, primary_key=True)
-    username: MappedColumn = mapped_column(String(50), nullable=False)
-    password: MappedColumn = mapped_column(String)
-    name: MappedColumn = mapped_column(String(100))
+    id: Mapped[int] = mapped_column(BigInteger, primary_key=True)
+    username: Mapped[str] = mapped_column(String(50), nullable=False)
+    password: Mapped[str] = mapped_column(String, nullable=False)
+    name: Mapped[str | None] = mapped_column(String(100))

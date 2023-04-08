@@ -9,7 +9,13 @@ packages = [{include = "funfeed_python_hexagonal_architecture"}]
 [tool.poetry.dependencies]
 python = "^3.11.2"
 sqlalchemy = "^2.0.9"
+alembic = "^1.10.3"
 
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+pre-commit = "^3.2.2"
+pytest = "^7.2.2"
 
 [build-system]
 requires = ["poetry-core"]
